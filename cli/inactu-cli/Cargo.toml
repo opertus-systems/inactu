@@ -10,7 +10,7 @@ base64 = "0.22"
 ed25519-dalek = "2.1"
 inactu-verifier = { path = "../../core/verifier" }
 serde_json = "1"
-wasmtime = "30"
+wasmtime = "36.0.5"
 
 [dev-dependencies]
 wat = "1"
