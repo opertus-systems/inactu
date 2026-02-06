@@ -1,6 +1,4 @@
-# Runtime Host ABI (v0, Experimental)
-
-Status: experimental. This ABI can change before v1 freeze.
+# Runtime Host ABI (v0)
 
 This document describes the host imports exposed by `inactu-cli run`.
 
