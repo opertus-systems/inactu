@@ -22,6 +22,10 @@ This keeps security-critical checks centralized and reused by both `verify` and
 - `run --bundle <bundle-dir> --keys <public-keys.json> [--keys-digest <sha256:...>] --policy <policy.{json|yaml}> --input <input-file> --receipt <receipt.json>`
 - `verify-receipt --receipt <receipt.json>`
 
+Success output contract:
+- command success lines start with `OK <command> ...` for stable log parsing
+- `inspect` intentionally emits only deterministic field lines
+
 Recommended for untrusted environments:
 - always pass `--keys-digest` on `verify` and `run`
 - keep `public-keys.json` under change control and pin by digest

@@ -157,11 +157,11 @@ fn verify_bundle(
         verify_signatures(&bundle.signatures, &public_keys).map_err(|e| e.to_string())?;
         let trust_ms = trust_started.elapsed().as_millis() as u64;
 
-        println!(
-            "OK artifact={} signers={}",
-            bundle.manifest.artifact,
-            bundle.signatures.signatures.len()
-        );
+    println!(
+        "OK verify artifact={} signers={}",
+        bundle.manifest.artifact,
+        bundle.signatures.signatures.len()
+    );
         Ok((
             bundle.manifest.artifact,
             bundle.signatures.signatures.len() as u64,
@@ -265,7 +265,7 @@ fn pack_bundle(bundle_dir: &Path, wasm_path: &Path, manifest_path: &Path) -> Res
         .map_err(|e| format!("signatures JSON encode failed: {e}"))?;
     write_file(&bundle_dir.join("signatures.json"), &signatures_out)?;
 
-    println!("OK packed bundle={}", bundle_dir.display());
+    println!("OK pack bundle={}", bundle_dir.display());
     Ok(())
 }
 
@@ -315,7 +315,7 @@ fn sign_bundle(bundle_dir: &Path, signer_id: &str, secret_key_path: &Path) -> Re
     write_file(&bundle_dir.join("signatures.json"), &signatures_out)?;
 
     println!(
-        "OK signed bundle={} signer={} signatures={}",
+        "OK sign bundle={} signer={} signatures={}",
         bundle_dir.display(),
         signer_id,
         signatures.signatures.len()
@@ -448,7 +448,7 @@ fn verify_receipt_file(receipt_path: &Path) -> Result<(), String> {
         let receipt = parse_receipt_json(&receipt_raw).map_err(|e| e.to_string())?;
         verify_receipt_hash(&receipt).map_err(|e| e.to_string())?;
         println!(
-            "OK receipt artifact={} receipt={}",
+            "OK verify-receipt artifact={} receipt={}",
             receipt.artifact,
             receipt_path.display()
         );

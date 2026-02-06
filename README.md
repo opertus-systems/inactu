@@ -69,7 +69,7 @@ out of the verifier core.
 
 ## Status
 
-Early development / v0 with conformance-first hardening.
+v0.1.0 baseline released; current work is hardening and operational polish.
 
 ## Security Model
 
@@ -83,6 +83,7 @@ Assumptions and non-goals are defined in `spec/threat-model.md`.
 - Coverage matrix: `docs/conformance-matrix.md`
 - Secure quickstart: `docs/getting-started.md`
 - Observability contract: `docs/observability.md`
+- Audit policy: `audit.toml`
 
 ## Secure CLI Flow (Quickstart)
 

@@ -1,0 +1,44 @@
+name: Release Artifacts
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  build-and-attach:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Cargo
+        uses: Swatinem/rust-cache@v2
+
+      - name: Build CLI release binary
+        run: cargo build --release -p inactu-cli --locked
+
+      - name: Package artifacts
+        run: |
+          mkdir -p dist
+          tar -C target/release -czf dist/inactu-cli-linux-x86_64.tar.gz inactu-cli
+          shasum -a 256 dist/inactu-cli-linux-x86_64.tar.gz > dist/SHA256SUMS
+
+      - name: Install Syft
+        uses: anchore/sbom-action/download-syft@v0
+
+      - name: Generate SBOMs
+        run: |
+          syft dir:. -o cyclonedx-json=dist/sbom.cyclonedx.json
+          syft dir:. -o spdx-json=dist/sbom.spdx.json
+
+      - name: Upload release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$TAG" dist/* --clobber

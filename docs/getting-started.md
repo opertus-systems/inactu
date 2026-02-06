@@ -1,4 +1,4 @@
-# Getting Started (Secure v0 Flow)
+# Getting Started (Secure v0.1 Flow)
 
 This guide shows the recommended signed execution flow for Inactu v0.
 

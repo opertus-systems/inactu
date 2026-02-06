@@ -16,7 +16,10 @@ Versioning.
 - Signature policy hardening requiring non-empty signature sets.
 - Security CI workflow (`clippy`, `cargo-deny`, `cargo-audit`).
 - `deny.toml` policy for reproducible `cargo-deny` checks.
+- `audit.toml` policy for explicit cargo-audit advisory handling.
 - `docs/getting-started.md` secure quickstart.
+- Release artifact workflow with attached checksums and SBOMs.
+- `docs/observability.md` runtime telemetry and metric contract.
 
 ### Changed
 - Signature payloads now bind to canonical `manifest_hash`.
@@ -25,6 +28,7 @@ Versioning.
   signature signers.
 - CLI internals refactored into cohesive modules for maintainability.
 - Integration tests consolidated with shared test helpers.
+- CLI success output normalized to `OK <command> ...` format.
 
 ## [0.1.0] - 2026-02-06
 

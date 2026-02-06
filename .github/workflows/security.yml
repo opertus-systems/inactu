@@ -40,7 +40,7 @@ jobs:
         uses: Swatinem/rust-cache@v2
 
       - name: Run cargo-deny
-        run: cargo deny check advisories bans sources
+        run: cargo deny check advisories bans sources licenses
 
   audit:
     runs-on: ubuntu-latest
@@ -58,4 +58,4 @@ jobs:
         uses: Swatinem/rust-cache@v2
 
       - name: Run cargo-audit
-        run: cargo audit
+        run: cargo audit --deny warnings
