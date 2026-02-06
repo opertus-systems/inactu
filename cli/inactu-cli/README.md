@@ -38,6 +38,10 @@ Experimental schema gate:
 - gate failure message is deterministic:
   `manifest schema_version '1.0.0-draft' requires --allow-experimental`
 
+Success output contract:
+- command success lines start with `OK <command> ...` for stable log parsing
+- `inspect` intentionally emits only deterministic field lines
+
 Recommended for untrusted environments:
 - always pass `--keys-digest` on `verify` and `run` (required by CLI)
 - keep `public-keys.json` under change control and pin by digest

@@ -1,17 +1,10 @@
-# Inactu CLI — secure, policy-governed execution of declarative skill pipelines.
+# Inactu
 
-Install the inactu CLI to run skills and pipelines.
+Verifiable execution of immutable skills.
 
-Repository rename note: this repository is `inactu-cli`. If an older
-`opertus-systems/inactu` repository path still exists, keep a redirect note to
-`opertus-systems/inactu-cli`.
-
-## About Inactu
-
-Inactu verifies and executes immutable, attestable skills with strict
-capability controls, deterministic verification/execution contracts, and signed
-provenance. It is an execution substrate, not an agent framework: packaging,
-signing, verification, and policy-constrained runtime with auditable receipts.
+Inactu is a secure execution substrate for running immutable, attestable
+executables ("skills") with explicit capabilities, reproducible builds, and
+enforceable provenance.
 
 ## What Inactu Is
 
@@ -42,12 +35,12 @@ Inactu is not an agent framework, workflow engine, or orchestration layer.
 ## Repository Layout
 
 ```text
-inactu-cli/
+inactu/
 ├─ spec/            # Normative specs (formats, policies, threat model)
 ├─ core/            # Verification, signing, policy libraries (Rust)
 ├─ runtime/         # Runtime execution/transcript docs
 ├─ cli/             # Developer tooling (pack, sign, verify, run)
-├─ skills/          # Blessed stdlib skills and fixtures
+├─ skills/          # Blessed stdlib skills (v0 placeholder)
 ├─ test-vectors/    # Conformance vectors
 ├─ docs/            # Architecture and release/readiness docs
 ├─ apps/            # Temporary app/control-plane scaffolds
@@ -76,27 +69,11 @@ out of the verifier core.
 
 ## Status
 
-v0.2.0 baseline released; current work is hardening and operational polish.
-
-Stability notes:
-- v0 bundle/manifest/policy/receipt schemas are normative and SemVer-governed.
-- Fields and commands marked `experimental` are explicitly unstable.
-- `inactu-cli run` requires `--receipt`; successful runs always emit a receipt.
-- External timestamp authority is out of scope for v0 receipts.
-- Reproducible builds are a roadmap objective; v0 does not yet publish CI build
-  reproducibility proofs.
-
-Compatibility policy is defined in `spec/compatibility.md`.
+v0.1.0 baseline released; current work is hardening and operational polish.
 
 ## Security Model
 
 Assumptions and non-goals are defined in `spec/threat-model.md`.
-
-## Runtime Profile (v0)
-
-- Artifact format: WebAssembly module (`.wasm`) validated by Wasmtime.
-- Host interface: Inactu host ABI (`docs/runtime-host-abi.md`).
-- WASI imports are not part of the v0 normative runtime contract.
 
 ## Conformance And Release
 
@@ -107,9 +84,6 @@ Assumptions and non-goals are defined in `spec/threat-model.md`.
 - Secure quickstart: `docs/getting-started.md`
 - Observability contract: `docs/observability.md`
 - Audit policy: `audit.toml`
-- Benchmark harness: `scripts/benchmark.sh` (writes `bench/latest.json`)
-- Ecosystem map: `docs/ecosystem.md`
-- Cross-repo release manifest: `docs/release-manifest.json`
 
 ## Secure CLI Flow (Quickstart)
 
