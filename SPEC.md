@@ -34,10 +34,16 @@ Inactu does not include:
 ## Normative Sources
 
 The following files are normative for v0:
+- `spec/v0.md`
+- `spec/v0/skill-manifest.schema.json`
+- `spec/v0/pipeline-dag.schema.json`
 - `spec/threat-model.md`
 - `spec/compatibility.md`
 - `spec/hashing.md`
 - `spec/packaging.md`
+- `spec/install.md`
+- `spec/install/index.schema.json`
+- `spec/install/meta.schema.json`
 - `spec/conformance.md`
 - `spec/skill-format.md`
 - `spec/skill-format/manifest.schema.json`

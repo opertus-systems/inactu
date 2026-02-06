@@ -2,10 +2,17 @@
 
 This directory contains normative v0 definitions for Inactu.
 
+- `v0.md` - composable skills execution contract and locked v0 decisions
+- `v0/` - v0 composable skill and pipeline schemas
 - `threat-model.md` - trust assumptions, goals, and non-goals
 - `compatibility.md` - stable-vs-experimental compatibility contract
 - `hashing.md` - canonical hashing and signature preimage rules
 - `packaging.md` - deterministic skill bundle packaging rules
+- `install.md` - content-addressed install flow and local store/index contract
+- `install/` - install metadata schemas
+- `install/README.md` - schema-to-runtime writer mapping for install metadata
+- `install/index.schema.json` - local install index schema
+- `install/meta.schema.json` - installed skill metadata schema
 - `conformance.md` - mandatory v0 conformance checks and vectors
 - `policy/` — policy schema and example
 - `policy/policy.md` - normative policy evaluation semantics
