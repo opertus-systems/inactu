@@ -1,0 +1,14 @@
+version: 1
+
+trusted_signers:
+  - alice.dev
+
+capability_ceiling:
+  fs:
+    read:
+      - /data
+  exec: false
+  time: false
+
+install_limits:
+  max_adds: 3

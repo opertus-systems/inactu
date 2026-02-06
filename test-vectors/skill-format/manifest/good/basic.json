@@ -1,0 +1,8 @@
+{
+  "name": "echo.minimal",
+  "version": "0.1.0",
+  "entrypoint": "run",
+  "artifact": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "capabilities": [],
+  "signers": ["alice.dev"]
+}

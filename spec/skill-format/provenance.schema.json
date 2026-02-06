@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Skill Provenance",
+  "type": "object",
+  "required": ["source", "commit", "build_system", "build_recipe_hash"],
+  "additionalProperties": false,
+  "properties": {
+    "source": {"type": "string"},
+    "commit": {"type": "string"},
+    "build_system": {"type": "string"},
+    "build_recipe_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

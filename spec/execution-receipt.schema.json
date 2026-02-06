@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Execution Receipt (v0)",
+  "type": "object",
+  "required": [
+    "artifact",
+    "inputs_hash",
+    "outputs_hash",
+    "caps_used",
+    "timestamp",
+    "receipt_hash"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "artifact": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "inputs_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "outputs_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "caps_used": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "timestamp": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "receipt_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}
+

@@ -1,0 +1,7 @@
+{
+  "name": "echo.e2e",
+  "version": "0.1.0",
+  "entrypoint": "run",
+  "capabilities": [],
+  "signers": ["alice.dev"]
+}

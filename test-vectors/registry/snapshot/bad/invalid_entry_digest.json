@@ -1,0 +1,7 @@
+{
+  "snapshot_hash": "sha256:0a222ea86e9139e5bd3aa58eeb2b35abfe1402d9b7758ef91e20d2c6119f35af",
+  "timestamp": 1738600999,
+  "entries": {
+    "echo@1.0.0": "sha256:XYZ"
+  }
+}

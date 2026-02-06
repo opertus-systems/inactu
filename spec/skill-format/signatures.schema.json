@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Skill Signatures",
+  "type": "object",
+  "required": ["artifact", "manifest_hash", "signatures"],
+  "additionalProperties": false,
+  "properties": {
+    "artifact": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "manifest_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["signer", "algorithm", "signature"],
+        "additionalProperties": false,
+        "properties": {
+          "signer": {"type": "string"},
+          "algorithm": {"type": "string", "enum": ["ed25519"]},
+          "signature": {"type": "string"}
+        }
+      }
+    }
+  }
+}

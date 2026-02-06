@@ -1,0 +1,59 @@
+{
+  "name": "basic-capability-ceiling",
+  "policy": {
+    "version": 1,
+    "trusted_signers": ["alice.dev"],
+    "capability_ceiling": {
+      "fs": {
+        "read": ["/data"],
+        "write": ["/tmp"]
+      },
+      "net": ["https://api.open-meteo.com"],
+      "env": ["HOME", "PATH"],
+      "exec": false,
+      "time": false
+    }
+  },
+  "cases": [
+    {
+      "capability": {"kind": "fs.read", "value": "/data/report.txt"},
+      "expect": "allow"
+    },
+    {
+      "capability": {"kind": "fs.write", "value": "/tmp/output.json"},
+      "expect": "allow"
+    },
+    {
+      "capability": {"kind": "net", "value": "https://api.open-meteo.com/v1/forecast"},
+      "expect": "allow"
+    },
+    {
+      "capability": {"kind": "net", "value": "https://api.open-meteo.com.evil.tld/v1/forecast"},
+      "expect": "deny"
+    },
+    {
+      "capability": {"kind": "env", "value": "HOME"},
+      "expect": "allow"
+    },
+    {
+      "capability": {"kind": "fs.read", "value": "/etc/passwd"},
+      "expect": "deny"
+    },
+    {
+      "capability": {"kind": "net", "value": "https://evil.example.com"},
+      "expect": "deny"
+    },
+    {
+      "capability": {"kind": "exec", "value": "true"},
+      "expect": "deny"
+    },
+    {
+      "capability": {"kind": "time", "value": "true"},
+      "expect": "deny"
+    },
+    {
+      "capability": {"kind": "unknown.kind", "value": "x"},
+      "expect": "deny"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "filesystem-prefix-boundary",
+  "policy": {
+    "version": 1,
+    "trusted_signers": ["alice.dev"],
+    "capability_ceiling": {
+      "fs": {
+        "read": ["/tmp"],
+        "write": ["/tmp"]
+      },
+      "exec": false,
+      "time": false
+    }
+  },
+  "cases": [
+    {
+      "capability": {"kind": "fs.read", "value": "/tmp/a.txt"},
+      "expect": "allow",
+      "note": "within /tmp prefix"
+    },
+    {
+      "capability": {"kind": "fs.read", "value": "/tmp2/a.txt"},
+      "expect": "deny",
+      "note": "must not match by naive string prefix"
+    },
+    {
+      "capability": {"kind": "fs.read", "value": "tmp/a.txt"},
+      "expect": "deny",
+      "note": "relative path is invalid"
+    },
+    {
+      "capability": {"kind": "fs.read", "value": "/tmp/../etc/passwd"},
+      "expect": "deny",
+      "note": "path normalization rejects parent traversal"
+    }
+  ]
+}
