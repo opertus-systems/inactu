@@ -1,0 +1,29 @@
+name: Benchmarks
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@4be9e76fd7c4901c61fb841f559994984270fce7
+
+      - name: Cache Cargo
+        uses: Swatinem/rust-cache@ad397744b0d591a723ab90405b7247fac0e6b8db
+
+      - name: Run benchmark harness
+        run: ITERATIONS=20 ./scripts/benchmark.sh
+
+      - name: Upload benchmark report
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+        with:
+          name: benchmark-report
+          path: bench/latest.json

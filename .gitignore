@@ -10,3 +10,6 @@ target/
 *.tmp
 *.bak
 *.orig
+
+# Benchmark outputs
+bench/latest.json

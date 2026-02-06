@@ -72,7 +72,7 @@ out of the verifier core.
 
 ## Status
 
-v0.1.0 baseline released; current work is hardening and operational polish.
+v0.2.0 baseline released; current work is hardening and operational polish.
 
 Stability notes:
 - v0 bundle/manifest/policy/receipt schemas are normative and SemVer-governed.
@@ -103,6 +103,9 @@ Assumptions and non-goals are defined in `spec/threat-model.md`.
 - Secure quickstart: `docs/getting-started.md`
 - Observability contract: `docs/observability.md`
 - Audit policy: `audit.toml`
+- Benchmark harness: `scripts/benchmark.sh` (writes `bench/latest.json`)
+- Ecosystem map: `docs/ecosystem.md`
+- Cross-repo release manifest: `docs/release-manifest.json`
 
 ## Secure CLI Flow (Quickstart)
 

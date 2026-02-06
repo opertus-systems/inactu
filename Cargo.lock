@@ -728,11 +728,11 @@ dependencies = [
 
 [[package]]
 name = "inactu"
-version = "0.1.0"
+version = "0.2.0"
 
 [[package]]
 name = "inactu-cli"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "base64",
@@ -751,7 +751,7 @@ dependencies = [
 
 [[package]]
 name = "inactu-verifier"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "base64",
  "ed25519-dalek",
