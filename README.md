@@ -81,6 +81,8 @@ Assumptions and non-goals are defined in `spec/threat-model.md`.
 - Run release gate locally: `cargo release-v0-check`
 - Release checklist: `RELEASE_V0_CHECKLIST.md`
 - Coverage matrix: `docs/conformance-matrix.md`
+- Secure quickstart: `docs/getting-started.md`
+- Observability contract: `docs/observability.md`
 
 ## Secure CLI Flow (Quickstart)
 

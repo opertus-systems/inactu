@@ -122,6 +122,9 @@ Please report security issues **privately**.
 
 Do NOT open a public issue for vulnerabilities.
 
+GitHub Security Advisories:
+- https://github.com/opertus-systems/inactu/security/advisories
+
 ### How to Report
 - Email: security@opertus.systems (preferred)
 - Include:
