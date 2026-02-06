@@ -15,6 +15,8 @@ Versioning.
 - Defensive bounded file reads for untrusted CLI inputs.
 - Signature policy hardening requiring non-empty signature sets.
 - Security CI workflow (`clippy`, `cargo-deny`, `cargo-audit`).
+- `deny.toml` policy for reproducible `cargo-deny` checks.
+- `docs/getting-started.md` secure quickstart.
 
 ### Changed
 - Signature payloads now bind to canonical `manifest_hash`.
